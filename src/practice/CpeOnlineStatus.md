@@ -41,11 +41,11 @@ star: true
 </font><font style="color:rgba(0, 0, 0, 0.85) !important;">b. 设备状态查询的时间复杂度仅为 O (1)，支持毫秒级快速响应。</font>
 
 ### <font style="color:rgb(0, 0, 0);">（二）状态更新机制：多 Bitmaps 结合滑动时间窗口</font>
-<font style="color:rgba(0, 0, 0, 0.85) !important;">采用 “空间换时间” 的设计思路，通过多 Bitmaps 与滑动时间窗口的结合实现状态动态更新：</font>
+<font style="color:rgba(0, 0, 0, 0.85) !important;">采用 "空间换时间" 的设计思路，通过多 Bitmaps 与滑动时间窗口的结合实现状态动态更新：</font>
 
 + <font style="color:rgba(0, 0, 0, 0.85) !important;">多 Bitmaps 分层：将不同时间片段的设备心跳状态分散存储在多个 Bitmaps 中；</font>
-+ <font style="color:rgba(0, 0, 0, 0.85) !important;">滑动时间窗口调度：通过窗口滑动实时聚合多 Bitmaps 中的状态数据，动态判定设备是否离线，替代传统 “单一周期判断” 模式；</font>
-+ <font style="color:rgba(0, 0, 0, 0.85) !important;">核心优势：以极小的额外内存占用，换取状态更新与查询的高性能，突破 “单周期判断” 的准确率限制。</font>
++ <font style="color:rgba(0, 0, 0, 0.85) !important;">滑动时间窗口调度：通过窗口滑动实时聚合多 Bitmaps 中的状态数据，动态判定设备是否离线，替代传统 "单一周期判断" 模式；</font>
++ <font style="color:rgba(0, 0, 0, 0.85) !important;">核心优势：以极小的额外内存占用，换取状态更新与查询的高性能，突破 "单周期判断" 的准确率限制。</font>
 
 ## <font style="color:rgb(0, 0, 0);">五、方案核心优势</font>
 <font style="color:rgba(0, 0, 0, 0.85) !important;">在不影响服务器性能、设备性能 / 功耗、网络带宽，且无需扩容服务器配置的前提下，完美解决设备非主动离线的细粒度管理问题，具备以下核心价值：</font>
