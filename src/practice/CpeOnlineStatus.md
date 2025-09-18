@@ -3,7 +3,7 @@ title: 基于滑动时间窗口的物联网设备非主动离线状态细粒度�
 icon: page
 order: 2
 author: yoystar
-date: 2024-02-16
+date: 2024-08-16
 tag:
   - 在线管理
   - CPE
@@ -62,3 +62,6 @@ star: true
 + 粒度可控：可灵活定义设备离线状态的判定时间粒度，适配不同场景的精度要求；
 + 资源友好：从存储、计算到网络层面均实现资源轻量化，避免额外成本投入。
 
+## 六、实现源码：
+
+https://github.com/yoystar/cpeOnlineStatus
