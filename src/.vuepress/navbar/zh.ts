@@ -6,7 +6,7 @@ export const zhNavbar = navbar([
   { 
 	text: "文章", 
 	icon: "discover", 
-	link: "/spring/containerInit.html/" 
+	link: "/spring/index.html/" 
   }
 //  ,
 //  {
