@@ -1,0 +1,1 @@
+import{_ as e,W as t,X as o,Y as s}from"./framework-6ae9e88c.js";const _={},c=s("p",null,"你好啊，我是yoystar，什么风把您给吹来了？感谢捧场！",-1),a=[c];function n(r,l){return t(),o("div",null,a)}const d=e(_,[["render",n],["__file","aboutMe.html.vue"]]);export{d as default};
