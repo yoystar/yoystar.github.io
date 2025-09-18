@@ -31,7 +31,7 @@ features:
 
   - title: Java进阶
     icon: java
-    details: 全是干货哦~
+    details: 全是干货
     link: /advanced/index.html
 
   - title: MySql
@@ -56,7 +56,7 @@ features:
 
   - title: 项目实战
     icon: creative
-    details: Talk is cheap,show me your code.
+    details: Show me your code.
     link: /practice/index.html
 
   - title: AI

@@ -11,7 +11,7 @@ tag:
 star: true
 ---
 
-##### <font style="color:rgb(24, 25, 28);">1.不要在日志记录过程中中断业务流程 </font>
+##### 1.不要在日志记录过程中中断业务流程
 ```java
 //错误示例：
 public void createShop(Shop shop){
@@ -21,7 +21,7 @@ public void createShop(Shop shop){
 }
 ```
 
-##### <font style="color:rgb(24, 25, 28);">2.不要使用System.out.println输出值</font>
+##### 2.不要使用System.out.println输出值
 ```java
 //System.out.println并没有打印到日志文件中，只会在终端输出，无法对日志采集或者收集；
 //同时println方法使用了synchronized关键字，带锁且同步，性能低，资源消耗较多。
@@ -36,7 +36,7 @@ public void record_log(){
 log.inf("<类名> >>> <方法名>：<参数1>:{}, <参数2>:{}", value1, value2);
 ```
 
-##### <font style="color:rgb(24, 25, 28);">3.禁止直接使用Log4j或者LogBack的API</font>
+##### 3.禁止直接使用Log4j或者LogBack的API
 ```java
 //禁止使用Log4j或者LogBack的API，直接进行日志操作，会造成日志系统跟自己的业务系统强耦合；
 
@@ -55,7 +55,7 @@ private static final Logger logger = LoggerFactory.getLogger(xxx.class);
 
 ```
 
-##### <font style="color:rgb(24, 25, 28);">4.对日志的输出，禁用拼接字符串，推荐使用占位符的方式。</font>
+##### 4.对日志的输出，禁用拼接字符串，推荐使用占位符的方式。
 ```java
 //错误示例：
 //使用字符串拼接的日志输出，虽然根据日志输出等级的配置，日志可能不输出，
@@ -76,7 +76,7 @@ public void hello (String name){
 
 ```
 
-##### <font style="color:rgb(24, 25, 28);">5.exception异常打印，禁用e.printStrackTrace()</font>
+##### 5.exception异常打印，禁用e.printStrackTrace()
 ```java
 //exception异常打印，禁用e.printStrackTrace()
 //e.printStrackTrace会生成字符串的堆栈信息，会占用字符串常量池内存空间，造成系统阻塞。
@@ -110,7 +110,7 @@ pbulic void hello(){
 }
 ```
 
-##### <font style="color:rgb(24, 25, 28);">6.exception异常打印，不要记录日志后又抛出异常</font>
+##### 6.exception异常打印，不要记录日志后又抛出异常
 ```java
 //错误示例：
 //不要记录日志后又继续throw e抛出异常，抛出去的异常一定会在外层再被处理，造成重复异常记录
@@ -133,7 +133,7 @@ pbulic void hello(){
 }
 ```
 
-##### <font style="color:rgb(24, 25, 28);">7.日志内禁止使用JSON工具的序列化对象</font>
+##### 7.日志内禁止使用JSON工具的序列化对象
 ```java
 //错误示例：
 //JSON工具使用get方法将对象序列化，如果get方法被重写，有存在抛出异常的情况。
@@ -148,7 +148,7 @@ public void hello(Object data){
 }
 ```
 
-##### <font style="color:rgb(24, 25, 28);">8.不要打印无意义的日志</font>
+##### 8.不要打印无意义的日志
 ```java
 //错误示例：
 //不带任何业务信息的日志，对排查故障毫无意义
@@ -173,7 +173,7 @@ public void hello(String id){
 
 ```
 
-##### <font style="color:rgb(24, 25, 28);">9.不要在循环中打印日志</font>
+##### 9.不要在循环中打印日志
 ```java
 //错误示例：
 //不要在循环中打印日志
@@ -185,7 +185,7 @@ public void hello(){
 }
 ```
 
-##### <font style="color:rgb(24, 25, 28);">10.不要重复打印相同日志</font>
+##### 10.不要重复打印相同日志
 ```java
 //错误示例：
 //打印相同日志
@@ -198,7 +198,7 @@ private void word(String s){
 }
 ```
 
-##### <font style="color:rgb(24, 25, 28);">11.重要的方法要记录调用日志</font>
+##### 11.重要的方法要记录调用日志
 ```java
 //正确示例：
 //重要方法在入口处记录调用日志，在出口处记录参数等
@@ -224,13 +224,13 @@ private void word(Data data){
 }
 ```
 
-##### <font style="color:rgb(24, 25, 28);">13.不要滥用error级别的日志</font>
+##### 13.不要滥用error级别的日志
 ```java
 //error意味着系统发生了非常严重的问题，必须有人介入立即处理，如果系统配置了告警系统，一般warn不会告警，但是error级别的问题，会根据监控配置，进行电话、短信或者邮件告警。
 ```
 
 ##### 14.exception捕获相关内容
-<font style="color:rgb(89, 97, 114);">容易错误的捕获异常方式：</font>
+容易错误的捕获异常方式：
 
 ```java
 try {
@@ -241,10 +241,8 @@ try {
 }
 ```
 
-+ <font style="color:rgb(89, 97, 114);">捕获了过于通用的异常</font><font style="color:rgb(89, 97, 114);"> </font>`Exception`<font style="color:rgb(89, 97, 114);">，应改为对应的</font><font style="color:rgb(89, 97, 114);"> </font>`InterruptedException`<font style="color:rgb(89, 97, 114);">。这么做的目的是因为：第一方便阅读代码，知道可能会出现什么具体的异常；第二不捕获意料之外的异常。</font>
-+ <font style="color:rgb(89, 97, 114);">不要捕获异常之后啥都不做（生吞异常）。这就是给自己挖坑，之后程序遇到问题，很难定位到这里。</font>
-
-<font style="color:rgb(89, 97, 114);"></font>
++ 捕获了过于通用的异常 `Exception`，应改为对应的 `InterruptedException`。这么做的目的是因为：第一方便阅读代码，知道可能会出现什么具体的异常；第二不捕获意料之外的异常。
++ 不要捕获异常之后啥都不做（生吞异常）。这就是给自己挖坑，之后程序遇到问题，很难定位到这里。
 
 ```java
 try {
@@ -255,10 +253,8 @@ try {
 }
 ```
 
-+ <font style="color:rgb(89, 97, 114);">自娱自乐是 ok 的，但不要放到生产环境中。因为 </font>`e.printStackTrace()`<font style="color:rgb(89, 97, 114);"> 的功能是：Prints this throwable and its backtrace to the </font>**<font style="color:rgb(89, 97, 114);">standard error stream。</font>**<font style="color:rgb(89, 97, 114);">很难判断它到底输出到哪里去了。</font>
-+ <font style="color:rgb(89, 97, 114);">应该用成熟的日志工具如 Slf4j 等。</font>
-
-<font style="color:rgb(89, 97, 114);"></font>
++ 自娱自乐是 ok 的，但不要放到生产环境中。因为 `e.printStackTrace()` 的功能是：Prints this throwable and its backtrace to the **standard error stream。**很难判断它到底输出到哪里去了。
++ 应该用成熟的日志工具如 Slf4j 等。
 
 ```java
 try {
@@ -271,21 +267,17 @@ try {
 }
 ```
 
-+ <font style="color:rgb(89, 97, 114);">不能因为怕丢失异常捕获，就把一大段代码都框到一个 try-catch 模块中。</font>
-+ <font style="color:rgb(89, 97, 114);">try-catch 代码段会产生额外的</font><font style="color:#DF2A3F;">性能开销</font><font style="color:rgb(89, 97, 114);">，它往往会影响 JVM 对代码进行优化。</font>
++ 不能因为怕丢失异常捕获，就把一大段代码都框到一个 try-catch 模块中。
++ try-catch 代码段会产生额外的**性能开销**，它往往会影响 JVM 对代码进行优化。
 
-<font style="color:rgb(89, 97, 114);"></font>
+###### 为什么代码中经常能看到 `catch XXException`，却几乎看不到 `catch XXError` 或 `catch Throwable` 呢？
++ Exception 才是应该关注处理的异常，这种异常处理后还可以使程序正常运行。
++ Error 属于重大问题，是会使程序直接崩溃的，捕获了也没什么用，很难让程序再「活」过来。
++ 至于 Throwable，首先不应该捕获这么宽泛的问题（比捕获 Exception 还严重），第二其中包含了 Error 也不是应该处理的问题。
++ 因此，Error 和 Throwable 除非你明确知道在干什么，否则不要捕获这两种。
 
-###### <font style="color:rgb(89, 97, 114);">为什么代码中经常能看到 </font>`catch XXException`<font style="color:rgb(89, 97, 114);">，却几乎看不到 </font>`catch XXError`<font style="color:rgb(89, 97, 114);"> 或 </font>`catch Throwable`<font style="color:rgb(89, 97, 114);"> 呢？</font>
-+ <font style="color:rgb(89, 97, 114);">Exception 才是应该关注处理的异常，这种异常处理后还可以使程序正常运行。</font>
-+ <font style="color:rgb(89, 97, 114);">Error 属于重大问题，是会使程序直接崩溃的，捕获了也没什么用，很难让程序再「活」过来。</font>
-+ <font style="color:rgb(89, 97, 114);">至于 Throwable，首先不应该捕获这么宽泛的问题（比捕获 Exception 还严重），第二其中包含了 Error 也不是应该处理的问题。</font>
-+ <font style="color:rgb(89, 97, 114);">因此，Error 和 Throwable 除非你明确知道在干什么，否则不要捕获这两种。</font>
+###### catch和throw的区别：
+对于可能会有异常的程序块，用try{}包住，用catch{}处理，如果try中有异常的话，程序不会中断，而是转到catch中执行。
 
-<font style="color:rgb(77, 77, 77);"></font>
-
-###### <font style="color:rgb(77, 77, 77);">catch和throw的区别：</font>
-<font style="color:rgb(77, 77, 77);">对于可能会有异常的程序块，用try{}包住，用catch{}处理，如果try中有异常的话，程序不会中断，而是转到catch中执行。</font>
-
-<font style="color:rgb(77, 77, 77);">而throw语句可以引发明确的异常，程序到了throw语句就立即停止，不会执行后面的程序。</font>
+而throw语句可以引发明确的异常，程序到了throw语句就立即停止，不会执行后面的程序。
 
