@@ -14,10 +14,10 @@ export default hopeTheme({
 
   logo: "/logo64.png",
 
-  //repo: "vuepress-theme-hope/vuepress-theme-hope",
-  repo: "yoystar",
+  //仓库链接 <用户名>/<仓库名>
+  repo: "yoystar/yoystar.github.io",
 
-  docsDir: "demo/theme-docs/src",
+  docsDir: "/src",
 
   locales: {
     "/": {
