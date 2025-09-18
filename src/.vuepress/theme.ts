@@ -12,7 +12,7 @@ export default hopeTheme({
 
   iconAssets: "iconfont",
 
-  logo: "/logo64.jpg",
+  logo: "/logo64.png",
 
   //repo: "vuepress-theme-hope/vuepress-theme-hope",
   repo: "yoystar",

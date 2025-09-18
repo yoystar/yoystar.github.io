@@ -2,7 +2,7 @@
 home: true
 icon: home
 title: JAVA
-heroImage: /my_logo.jpg
+heroImage: /my_logo.png
 heroText: 井井有神
 tagline: 什么风把您给吹来了？
 actions:
