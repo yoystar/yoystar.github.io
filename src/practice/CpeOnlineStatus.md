@@ -53,4 +53,3 @@ star: true
 + <font style="color:rgba(0, 0, 0, 0.85) !important;">规模适配：支持亿级设备的状态管理，满足超大规模物联网场景需求；</font>
 + <font style="color:rgba(0, 0, 0, 0.85) !important;">粒度可控：可灵活定义设备离线状态的判定时间粒度，适配不同场景的精度要求；</font>
 + <font style="color:rgba(0, 0, 0, 0.85) !important;">资源友好：从存储、计算到网络层面均实现资源轻量化，避免额外成本投入。</font>
-
