@@ -270,6 +270,8 @@ java -javaagent:yourpaoject-encrypted.jar='-pwd 123456' -jar yourpaoject-encrypt
 #无密码的启动命令：
 java -javaagent:yourpaoject-encrypted.jar -jar yourpaoject-encrypted.jar
 ```
+启动时，如果在控制台总看到以下界面显示，说明字节码解密成功，可以无差别的使用项目了：
+<img width="463" height="105" alt="image" src="https://github.com/user-attachments/assets/ae42588e-dcc0-4fe8-af5a-a2eba29def5c" />
 
 ## 六、主动防御：逆向工具探测
 
