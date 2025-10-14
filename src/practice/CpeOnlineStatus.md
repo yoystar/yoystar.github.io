@@ -1,7 +1,7 @@
 ---
 title: 基于滑动时间窗口的物联网设备非主动离线状态细粒度管理方案
 icon: page
-order: 2
+order: 1
 author: yoystar
 date: 2024-08-16
 tag:
