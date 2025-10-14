@@ -1,7 +1,7 @@
 ---
 title: Log日志记录最佳实践
 icon: page
-order: 1
+order: 3
 author: yoystar
 date: 2023-02-16
 tag:
