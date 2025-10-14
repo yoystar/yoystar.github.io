@@ -14,6 +14,11 @@ actions:
     link: /aboutMe.html
 
 features:
+  - title: 项目实战
+    icon: creative
+    details: Show me your code.
+    link: /practice/index.html
+
   - title: Spring
     icon: leaf
     details: 是Spring全家桶，不是KFC全家桶！
@@ -23,11 +28,6 @@ features:
     icon: discover
     details: 总得懂点微服务吧？
     link: /springcloud/index.html
-
-  - title: 并发编程
-    icon: asynchronous
-    details: 线上崩了再学就晚喽~
-    link: /concurrent/index.html
 
   - title: Java进阶
     icon: java
@@ -54,10 +54,10 @@ features:
     details: 同学，请排队！
     link: /kafka/index.html
 
-  - title: 项目实战
-    icon: creative
-    details: Show me your code.
-    link: /practice/index.html
+  - title: 并发编程
+    icon: asynchronous
+    details: 线上崩了再学就晚喽~
+    link: /concurrent/index.html
 
   - title: AI
     icon: emmet

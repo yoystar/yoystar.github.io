@@ -3,6 +3,13 @@ import { sidebar } from "vuepress-theme-hope";
 export const zhSidebar = sidebar({
   "/": [
     {
+      text: "项目实战",
+      icon: "creative",
+      prefix: "practice/",
+      children: "structure",
+      collapsible: true
+    },
+    {
       text: "Spring",
       icon: "leaf",
       prefix: "spring/",
@@ -13,13 +20,6 @@ export const zhSidebar = sidebar({
       text: "Spring Cloud",
       icon: "discover",
       prefix: "springcloud/",
-      children: "structure",
-      collapsible: true
-    },
-    {
-      text: "并发编程",
-      icon: "asynchronous",
-      prefix: "concurrent/",
       children: "structure",
       collapsible: true
     },
@@ -59,9 +59,9 @@ export const zhSidebar = sidebar({
       collapsible: true
     },
     {
-      text: "项目实战",
-      icon: "creative",
-      prefix: "practice/",
+      text: "并发编程",
+      icon: "asynchronous",
+      prefix: "concurrent/",
       children: "structure",
       collapsible: true
     },
