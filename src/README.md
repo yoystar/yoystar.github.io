@@ -7,7 +7,7 @@ heroText: 井井有神
 tagline: 什么风把您给吹来了？
 actions:
   - text: START！🎉
-    link: /spring/index.html
+    link: /practice/index.html
     type: primary
 
   - text: 关于我
