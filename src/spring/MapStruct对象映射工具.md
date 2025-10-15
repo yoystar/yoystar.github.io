@@ -1,7 +1,7 @@
 ---
 title: MapStruct对象映射工具
 icon: page
-order: 1
+order: 6
 author: yoystar
 date: 2025-03-15
 tag:
@@ -189,6 +189,7 @@ target/classes/com/hbmt/common/iot/bean/terminal/convert/AAAToBBBConvertImpl.cla
 查看Convert接口的实现类，其中是否有参数转换或者嵌套实体类转换的代码，如下图所示：
 
 ![img](https://cdn.nlark.com/yuque/0/2024/png/42586141/1718331402350-15c786f5-6970-42a3-8c9a-2d1d837517df.png)
+
 
 
 
