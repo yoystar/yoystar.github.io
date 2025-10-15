@@ -5,9 +5,9 @@ order: 7
 author: yoystar
 date: 2025-05-15
 tag:
-  - MySQL
-  - EXPLAIN
-  - SQL调优
+  - CDN
+  - 阿里云
+  - 内容分发网络
 star: true 
 ---
 
@@ -114,3 +114,4 @@ http://minio.yourwebsite.cn/your-bucket/image/2025/05/20/891c073b81924eff819ba20
 
 
 http://minio.yourwebsite.cn:9000/your-bucket/image/2025/05/20/891c073b81924eff819ba2072bdf516f_1070938f17a646599294518da8ce2dfb_update98.zip
+
