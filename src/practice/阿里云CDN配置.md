@@ -17,18 +17,20 @@ star: true
 
 ##### 2. 单击刷新预热，操作类型选择预热，在URL框内输入URL地址，单击提交，预热任务会将需要预热的文件预热到CDN的二级节点上。
 
-![img](https://cdn.nlark.com/yuque/0/2024/png/42586141/1730252805780-d3169444-617f-49a1-90c1-e29090b344f9.png)
+<img width="884" height="711" alt="image" src="https://github.com/user-attachments/assets/48e8b059-25e8-44d8-bfe6-ef9492965b0e" />
+
 
 ##### 3. 单击操作记录，即可查看资源预热的详细记录和进度。预热进度为100%，表示预热执行完成，预热数量多会影响预热进度，请您耐心等待。 说明：预热任务的状态为成功，表示预热任务提交成功，并不代表文件已经预热结束。
 
 ##### 4. 执行如下命令，查看预热任务的执行状态。
 
 ```xml
-curl -I 'http://hbmtdownload.cn/SC_Update/IP816N_57TE0/update_V1.0.1_20241029.zip'
-curl -I 'http://hbmtdownload.cn/SC_Update/IP816N_57TE0/speedtest/speed.ts'
+curl -I 'http://yourwebsite.cn/SC_Update/IP816N_57TE0/update_V1.0.1_20241029.zip'
+curl -I 'http://yourwebsite.cn/SC_Update/IP816N_57TE0/speedtest/speed.ts'
 ```
 
-![img](https://cdn.nlark.com/yuque/0/2024/png/42586141/1730255679031-0fd615f6-4722-4c2d-8263-7054092b80e4.png)
+<img width="972" height="311" alt="image" src="https://github.com/user-attachments/assets/aadc3ec2-36d9-43af-8d6f-8a2751732ea9" />
+
 
 **说明**：
 
@@ -39,7 +41,8 @@ curl -I 'http://hbmtdownload.cn/SC_Update/IP816N_57TE0/speedtest/speed.ts'
 
 CDN缓存节点可分为L1节点和L2节点。L1节点分布在全国各省市，L2节点分布在几个大区下，简单架构如下图所示。
 
-![img](https://cdn.nlark.com/yuque/0/2024/png/42586141/1730252894859-9061cacc-158b-4759-80b0-9197eae9457e.png)
+<img width="745" height="533" alt="image" src="https://github.com/user-attachments/assets/395f055e-0ff7-426f-ada9-22055791d5e5" />
+
 
 CDN节点缓存策略如下：
 
@@ -50,19 +53,24 @@ CDN节点缓存策略如下：
 
 ##### 1.首先进入CDN控制台，添加域名：
 
-![img](https://cdn.nlark.com/yuque/0/2025/png/42586141/1747806329742-3c82f569-597b-4471-969b-fc7baee66355.png)
+<img width="1858" height="401" alt="image" src="https://github.com/user-attachments/assets/8e80d20c-3f68-49b8-9970-714cabd77124" />
+
 
 ##### 2.新添加域名配置如下：
 
-![img](https://cdn.nlark.com/yuque/0/2025/png/42586141/1747806579614-461e6615-c897-4ddd-9c60-3dd8b4392e46.png)
+<img width="1491" height="890" alt="image" src="https://github.com/user-attachments/assets/f8e54986-1b82-4c1a-b473-2e9ebf230690" />
 
-![img](https://cdn.nlark.com/yuque/0/2025/png/42586141/1747807074250-30de130c-5922-4759-866c-252cbc9f60c8.png)
 
-![img](https://cdn.nlark.com/yuque/0/2025/png/42586141/1747807088755-4e3c2935-f797-472f-b4ab-856720852862.png)
+<img width="1793" height="731" alt="image" src="https://github.com/user-attachments/assets/bdc02d75-985f-436c-8a15-254e29112ac3" />
+
+
+<img width="1761" height="850" alt="image" src="https://github.com/user-attachments/assets/e4955f2c-4509-4168-a612-63cb00f36e25" />
+
 
 ##### 3.配置完成后，复制新添加链接对应的CNAME:
 
-![img](https://cdn.nlark.com/yuque/0/2025/png/42586141/1747806644038-775a9b26-f0e9-44bb-bcea-9445da82580a.png)
+<img width="1853" height="370" alt="image" src="https://github.com/user-attachments/assets/ff2e91be-1fca-4b4d-b70a-94a6f949fae1" />
+
 
 ##### 4.进入DNS解析控制台，新添加一条DNS解析记录：
 
@@ -72,19 +80,21 @@ CDN节点缓存策略如下：
 
 记录值为步骤3获取的CNAME值
 
-![img](https://cdn.nlark.com/yuque/0/2025/png/42586141/1747806820041-cae57f47-b38f-464a-9662-539745eb17b5.png)
+<img width="1838" height="538" alt="image" src="https://github.com/user-attachments/assets/640bbee9-2e25-4b87-98df-afaacd570afa" />
+
 
 ##### 5.若依框架中，将新添加的域名配置为"自定义域名"，如下图所示：
 
-![img](https://cdn.nlark.com/yuque/0/2025/png/42586141/1747807028971-18383c3f-0e80-4f4f-a79e-b76d9d67219c.png)
+<img width="884" height="740" alt="image" src="https://github.com/user-attachments/assets/27ea2fdb-ca24-4b31-92c1-860475467b95" />
+
 
 ##### 6.注意信息：
 
 **标准DNS协议规定：**同一个主机名（如cdn.example.com）不能同时存在A记录和CNAME记录，否则会导致解析异常或不可预期的行为，因此配置cdn的二级域名需要单独一条，与其他业务用的二级域名区分开，例如minio的域名需要两个：
 
-minio.hbmtdownload.cn，用于文件上传、控制台登录等业务。
+minio.yourwebsite.cn，用于文件上传、控制台登录等业务。
 
-minio-cdn.hbmtdownload.cn，用于文件下载的cdn加速。
+minio-cdn.yourwebsite.cn，用于文件下载的cdn加速。
 
 
 
@@ -98,8 +108,9 @@ minio-cdn.hbmtdownload.cn，用于文件下载的cdn加速。
 
 **正确的访问CDN链接（http使用默认80端口）：**
 
-http://minio.hbmtdownload.cn/hbmt-bucket/image/2025/05/20/891c073b81924eff819ba2072bdf516f_1070938f17a646599294518da8ce2dfb_update98.zip 
+http://minio.yourwebsite.cn/your-bucket/image/2025/05/20/891c073b81924eff819ba2072bdf516f_1070938f17a646599294518da8ce2dfb_update98.zip 
 
 **不正确****的访问CDN链接（错误的带上回源端口）：**
 
-http://minio.hbmtdownload.cn:9000/hbmt-bucket/image/2025/05/20/891c073b81924eff819ba2072bdf516f_1070938f17a646599294518da8ce2dfb_update98.zip
+
+http://minio.yourwebsite.cn:9000/your-bucket/image/2025/05/20/891c073b81924eff819ba2072bdf516f_1070938f17a646599294518da8ce2dfb_update98.zip
