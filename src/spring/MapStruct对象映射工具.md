@@ -155,9 +155,10 @@ ModelInfo modelInfo = MapstructUtils.convert(modelInfoVo, ModelInfo.class);
 
 ModelInfoVo和ModelInfo的待映射实体类<<<字段名需要相同>>>
 
-<details class="lake-collapse"><summary id="u0e387099"><span class="ne-text">ModelInfoVo类中的CpeConfigVo实体类字段 命名成：cpeConfig</span></summary><p id="u49856e0f" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><img src="https://cdn.nlark.com/yuque/0/2024/png/42586141/1718331080148-a69bd9bc-ff06-4d78-9cdf-ffcbf4744c9a.png" width="734" title="" crop="0,0,1,1" id="uXhV0" class="ne-image"></p></details>
+<details class="lake-collapse"><summary id="u0e387099"><span class="ne-text">ModelInfoVo类中的CpeConfigVo实体类字段 命名成：cpeConfig</span></summary><p id="u49856e0f" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><img src="https://github.com/user-attachments/assets/b862f084-9ed4-4101-a5e8-b4e0a7cea04f" width="734" title="" crop="0,0,1,1" id="uXhV0" class="ne-image"></p></details>
 
-<details class="lake-collapse"><summary id="u3226bbc8"><span class="ne-text">ModelInfo类中的CpeConfig实体类字段 命名成：cpeConfig</span></summary><p id="u83d556c2" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><img src="https://cdn.nlark.com/yuque/0/2024/png/42586141/1718331151244-cf27b800-8b98-47cb-98c0-3318bc1f47b7.png" width="592" title="" crop="0,0,1,1" id="u3875882b" class="ne-image"></p></details>
+<details class="lake-collapse"><summary id="u3226bbc8"><span class="ne-text">ModelInfo类中的CpeConfig实体类字段 命名成：cpeConfig</span></summary><p id="u83d556c2" class="ne-p" style="margin: 0; padding: 0; min-height: 24px"><img src="https://github.com/user-attachments/assets/2c75047c-58d5-44d3-8f35-d2d76362e9fd" width="592" title="" crop="0,0,1,1" id="u3875882b" class="ne-image"></p></details>
+
 
 ##### 3.5. 有了已经定义的类型转换类，待转换的实体类中，又嵌套了其他的实体类,导致的异常：
 
@@ -172,11 +173,13 @@ java: Ambiguous mapping methods found for mapping property "ModelInfoVo modelInf
 
 1.给被嵌套的Conventer添加@Named注解：
 
-![img](https://cdn.nlark.com/yuque/0/2024/png/42586141/1724321320061-e1900248-d619-4dcb-b980-70c0d2ce96b8.png)
+<img width="909" height="196" alt="image" src="https://github.com/user-attachments/assets/7aabd0b6-3fc1-4b89-9405-43892f46a1bc" />
+
 
 2.待转换类在使用添加如下修改(修改第1步后如果生效，且convert的impl实现类中已经生成了被嵌套对象的转换，第2步可以省略)：
 
-![img](https://cdn.nlark.com/yuque/0/2024/png/42586141/1724321346978-6362db39-9c81-48d0-9ca7-d577f48bcb66.png)
+<img width="940" height="299" alt="image" src="https://github.com/user-attachments/assets/761a7012-77f0-45b3-9002-98001121fc42" />
+
 
 #### 4. 问题调查方法：
 
@@ -188,9 +191,11 @@ target/classes/com/hbmt/common/iot/bean/terminal/convert/AAAToBBBConvertImpl.cla
 
 查看Convert接口的实现类，其中是否有参数转换或者嵌套实体类转换的代码，如下图所示：
 
-![img](https://cdn.nlark.com/yuque/0/2024/png/42586141/1718331402350-15c786f5-6970-42a3-8c9a-2d1d837517df.png)
+<img width="916" height="859" alt="image" src="https://github.com/user-attachments/assets/c6d2898e-6f93-4384-991e-a6f9af68db5e" />
+
 
 
 
 
 如果嵌套的实体类没有上图的转换过程，需要检查转换两端的实体类中，嵌套实体类的<字段名是否相同>
+
