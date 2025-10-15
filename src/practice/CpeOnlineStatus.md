@@ -62,6 +62,9 @@ star: true
 + 粒度可控：可灵活定义设备离线状态的判定时间粒度，适配不同场景的精度要求；
 + 资源友好：从存储、计算到网络层面均实现资源轻量化，避免额外成本投入。
 
-## 六、实现源码：
+## 六、原理图：
+<img width="1181" height="942" alt="image" src="https://github.com/user-attachments/assets/4076aa84-0d74-4415-8b5a-9939389eb61a" />
+
+## 七、实现源码：
 
 https://github.com/yoystar/cpeOnlineStatus
