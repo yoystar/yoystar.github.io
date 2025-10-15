@@ -255,7 +255,8 @@ public class LogAspect {
 
 其中@Before(value = "@annotation(controllerLog)")中的controllerLog是形参（实参是Log），实际切面定义的是从public @interface Log这个自定义注解切入。
 
-![img](https://cdn.nlark.com/yuque/0/2024/png/42586141/1720514428172-25e5b9cf-93be-4b86-b3d8-dba37cbb2b12.png)
+<img width="602" height="230" alt="image" src="https://github.com/user-attachments/assets/5b11c535-5fa4-4fe0-a904-a9c62bb8f420" />
+
 
 ##### 4.自定义一个接收Log并异步写入的事件监听器Listener
 
@@ -267,9 +268,11 @@ public class LogAspect {
 
 以下代码中，就是OperLogEvent和LogininforEvent被发布时，会自动调用saveLog和saveLogininfor方法。其中发布的代码在步骤2中以及登录操作时的publishEvent：
 
-![img](https://cdn.nlark.com/yuque/0/2024/png/42586141/1720514775461-99871a0b-2b87-4e88-86d6-cfcf56e00c61.png)
+<img width="796" height="174" alt="image" src="https://github.com/user-attachments/assets/89a5699f-d018-4fee-ab31-3a0637850ebd" />
 
-![img](https://cdn.nlark.com/yuque/0/2024/png/42586141/1720515487129-19ad8520-a560-4de6-af7c-b6e19781b92f.png)
+
+<img width="980" height="788" alt="image" src="https://github.com/user-attachments/assets/fe028e0b-45b6-412b-9cc7-86b002ec1a70" />
+
 
 ```java
 /**
@@ -365,4 +368,5 @@ com.hbmt.common.log.aspect.LogAspect
   <groupId>com.hbmt</groupId>
   <artifactId>common-log</artifactId>
 </dependency>
+
 ```
