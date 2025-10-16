@@ -1,1 +1,0 @@
-import{_ as e,W as t,X as o,Y as a}from"./framework-6ae9e88c.js";const s={},_=a("p",null,"你好啊，我是yoystar， 敲键盘跟嘬咖啡都很快的java开发，毫无技术可言的游戏纯体验玩家，野生照相师傅，感谢捧场！ /n另外，我还有一条小狗🐕！！！",-1),c=[_];function n(r,l){return t(),o("div",null,c)}const d=e(s,[["render",n],["__file","aboutMe.html.vue"]]);export{d as default};
